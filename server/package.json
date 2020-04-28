@@ -2,9 +2,9 @@
   "name": "stonks-app-server",
   "version": "0.0.1",
   "description": "Server for stonks",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +23,9 @@
   "dependencies": {
     "apollo-server": "^2.12.0",
     "express": "^4.17.1",
-    "graphql": "^15.0.0",
-    "taapi": "^1.2.7"
+    "graphql": "^15.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
