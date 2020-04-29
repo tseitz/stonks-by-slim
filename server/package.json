@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/tseitz/stonks-by-slim#readme",
   "dependencies": {
+    "apollo-datasource-rest": "^0.8.1",
     "apollo-server": "^2.12.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^15.0.0"
   },
