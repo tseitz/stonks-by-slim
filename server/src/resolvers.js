@@ -1,6 +1,5 @@
 module.exports = {
   Query: {
-    getStrategies: (_, __, { dataSources }) =>
-      dataSources.iexApi.getStrategies(),
+    getTop: (_, __, { dataSources }) => dataSources.iexApi.getTop(),
   },
 };

@@ -3,26 +3,37 @@ const { RESTDataSource } = require("apollo-datasource-rest");
 class IEXApi extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = `https://cloud.iexapis.com/v1/`;
+    this.baseURL = `https://cloud.iexapis.com/stable/stock/aapl/indicator/obv`;
   }
 
-  async getStrategies() {
-    const response = await this.get("stock", {
-      symbol: "AAPL",
+  async getTop() {
+    const response = await this.get("", {
       token: process.env["STONKS_API_KEY"],
     });
 
-    return Array.isArray(response)
-      ? response.map((strat) => this.strategyReducer(strat))
-      : [];
+    return this.topReducer(response);
   }
 
-  strategyReducer(strat) {
+  topReducer(stock) {
+    console.log(stock);
     return {
-      strategyId: strat.strategy_id,
-      name: strat.name,
-      description: strat.description,
-      lastTestNum: strat.last_test_num,
+      indicator: stock.indicator,
+      chart: stock.chart,
+      // date: stock.date,
+      // open: stock.open,
+      // close: stock.close,
+      // high: stock.high,
+      // low: stock.low,
+      // volume: stock.volume,
+      // uOpen: stock.uOpen,
+      // uClose: stock.uClose,
+      // uHigh: stock.uHigh,
+      // uLow: stock.uLow,
+      // uVolume: stock.uVolume,
+      // change: stock.change,
+      // changePercent: stock.changePercent,
+      // label: stock.label,
+      // changeOverTime: stock.changeOverTime,
     };
   }
 }
