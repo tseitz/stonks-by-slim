@@ -3,7 +3,9 @@ const { RESTDataSource } = require("apollo-datasource-rest");
 class IEXApi extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = `https://cloud.iexapis.com/stable/stock/aapl/indicator/obv`;
+    this.baseURL =
+      "https://sandbox.iexapis.com/stable/stock/aapl/indicator/obv"; // sandbox
+    // this.baseURL = `https://cloud.iexapis.com/stable/stock/aapl/indicator/obv`; // production
   }
 
   async getTop() {
